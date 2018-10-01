@@ -12,12 +12,12 @@ def writeTimes(csvname, alltimes) :
 	
 	with open(csvname, "wb") as csvfile:
 		w = csv.writer(csvfile, delimiter=",")
-		print len(alltimes)
-		print alltimes[33]
-		print alltimes[34]
+		#print len(alltimes)
+		#print alltimes[33]
+		#print alltimes[34]
 		for ea in alltimes:
 			ea = ea.split(',')
-			print ea
+			#print ea
 			w.writerow(ea)
 
 	return
@@ -80,12 +80,13 @@ def main():
 
 	############################
 	# OPTION: take filename as a command line argument
-	"""
+	
 	filename = sys.argv[1]
 	if (".txt" not in filename):
 		print "ERROR: file must be .txt"
 	csvname = filename.split(".")[0] + ".csv"
-	"""
+	print "Data from " + filename + " will be written to " + csvname
+
 
 	alltimes = readTextData(filename)
 	writeTimes(csvname, alltimes)
